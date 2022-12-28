@@ -42,7 +42,7 @@ class TestUserAddToCartFromProductPage(object):
         page.should_be_authorized_user() # на деле такие проверки лучше не делать (setup не для этого)
 
     @pytest.mark.need_review
-    def test_user_can_add_product_to_cart(self, browser):
+    def test_user_can_add_product_to_basket(self, browser):
         link = ProductPageLocators.PRODUCT_PAGE_PROMO
     
         # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес	
@@ -71,7 +71,7 @@ class TestUserAddToCartFromProductPage(object):
         page.should_not_be_success_message()
 
 @pytest.mark.need_review
-def test_guest_can_add_product_to_cart(browser):
+def test_guest_can_add_product_to_basket(browser):
     link = ProductPageLocators.PRODUCT_PAGE_PROMO
     
     # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес	
@@ -113,7 +113,7 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     login_page.should_be_login_page()
 
 @pytest.mark.need_review
-def test_guest_cant_see_product_in_cart_opened_from_product_page(browser):
+def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     link = ProductPageLocators.PRODUCT_PAGE_LINK
 
     # инициализируем Page Object, передаем в конструктор экземпляр драйвера и url адрес	
