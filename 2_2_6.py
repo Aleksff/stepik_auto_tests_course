@@ -4,11 +4,12 @@ import time
 import math
 
 def calc(x):
-  return str(math.log(abs(12*math.sin(int(x)))))
+
 
 try: 
     link = "http://SunInJuly.github.io/execute_script.html"
     browser = webdriver.Chrome()
+    browser.implicitly_wait(10)
     browser.get(link)
 	    
     element = browser.find_element(By.CSS_SELECTOR, "#input_value")
